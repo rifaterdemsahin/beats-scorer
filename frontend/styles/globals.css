@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a0f;
+  --color-foreground: #ffffff;
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-rose-400: #fb7185;
+  --color-amber-400: #fbbf24;
+  --color-sky-400: #38bdf8;
+  --color-violet-400: #a78bfa;
+  --color-orange-400: #fb923c;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Range input styling for Firefox */
+input[type="range"]::-moz-range-thumb {
+  border: none;
+  border-radius: 50%;
+  background: #10b981;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  height: 6px;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(16, 185, 129, 0.3);
+  color: #ffffff;
+}

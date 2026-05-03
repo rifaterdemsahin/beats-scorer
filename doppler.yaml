@@ -1,0 +1,7 @@
+setup:
+  - project: lyra-beat
+    config: dev
+    path: /
+
+    # Optional: define which secrets to inject during local development
+    # doppler run -- npm start
