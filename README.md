@@ -1,10 +1,10 @@
-# Lyra-Beat
+# beats-scorer
 
 AI-powered beat and sound-bite scoring engine for YouTube content creators.
 
 ## Project Description
 
-Lyra-Beat is a FastAPI backend service that leverages multiple AI providers (Gemini, OpenAI, Claude, xAI, FAL) to analyze, score, and enhance audio beats and sound bites. Designed for content creators who want data-driven feedback on their audio assets before publishing.
+beats-scorer is a FastAPI backend service that leverages multiple AI providers (Gemini, OpenAI, Claude, xAI, FAL) to analyze, score, and enhance audio beats and sound bites. Designed for content creators who want data-driven feedback on their audio assets before publishing.
 
 ## Tech Stack
 
@@ -36,8 +36,8 @@ npm run dev
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/rifaterdemsahin/lyra-beat.git
-cd lyra-beat
+git clone https://github.com/rifaterdemsahin/beats-scorer.git
+cd beats-scorer
 
 # 2. Copy environment variables
 cp .env.example .env
@@ -69,7 +69,7 @@ uvicorn app.main:app --reload --port 8080
 ### Prerequisites
 
 1. **Fly.io account** and CLI installed: `brew install flyctl`
-2. **Doppler account** with project `lyra-beat` created
+2. **Doppler account** with project `beats-scorer` created
 3. **GitHub repository** secrets configured:
    - `FLY_API_TOKEN`
    - `DOPPLER_TOKEN`
@@ -94,7 +94,7 @@ doppler run -- flyctl deploy --remote-only
 
 ## Project Links
 
-- **GitHub Repository:** https://github.com/rifaterdemsahin/lyra-beat
+- **GitHub Repository:** https://github.com/rifaterdemsahin/beats-scorer
 - **LinkedIn:** https://www.linkedin.com/in/rifaterdemsahin/
 - **YouTube:** https://www.youtube.com/@RifatErdemSahin
 

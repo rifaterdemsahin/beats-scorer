@@ -1,4 +1,4 @@
-app = "lyra-beat"
+app = "beats-scorer"
 primary_region = "lhr"
 
 [build]

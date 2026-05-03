@@ -33,7 +33,7 @@ if settings.SENTRY_DSN:
 
 app = FastAPI(
     title=settings.APP_NAME,
-    description="AI-powered musical score generation from text.",
+    description="AI-powered beat and sound-bite scoring engine.",
     version="0.1.0",
 )
 

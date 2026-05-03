@@ -5,9 +5,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Settings:
-    APP_NAME: str = os.getenv("APP_NAME", "Lyra-Beat")
+    APP_NAME: str = os.getenv("APP_NAME", "beats-scorer")
     DEBUG: bool = os.getenv("DEBUG", "false").lower() == "true"
-    PORT: int = int(os.getenv("PORT", "8000"))
+    PORT: int = int(os.getenv("PORT", "8080"))
     HOST: str = os.getenv("HOST", "0.0.0.0")
     
     # API Keys (managed by Doppler)

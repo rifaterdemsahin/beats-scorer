@@ -1,5 +1,5 @@
 setup:
-  - project: lyra-beat
+  - project: beats-scorer
     config: dev
     path: /
 

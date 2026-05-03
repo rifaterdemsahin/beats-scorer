@@ -1,4 +1,4 @@
-"""Pydantic models for Lyra-Beat API requests and responses."""
+"""Pydantic models for beats-scorer API requests and responses."""
 from pydantic import BaseModel, Field
 from typing import Optional, List
 

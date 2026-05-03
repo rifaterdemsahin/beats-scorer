@@ -22,11 +22,11 @@ if ! doppler me &> /dev/null; then
 fi
 
 # Create project if it doesn't exist
-echo "📁 Creating Doppler project 'lyra-beat'..."
-doppler projects create lyra-beat 2>/dev/null || echo "   Project already exists"
+echo "📁 Creating Doppler project 'beats-scorer'..."
+doppler projects create beats-scorer 2>/dev/null || echo "   Project already exists"
 
 # Set environment to dev
-doppler setup --project lyra-beat --config dev 2>/dev/null || true
+doppler setup --project beats-scorer --config dev 2>/dev/null || true
 
 echo "🔑 Uploading secrets to Doppler..."
 

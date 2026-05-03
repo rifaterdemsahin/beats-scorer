@@ -267,16 +267,15 @@ git push origin main
 
 ```bash
 # Check app status
-flyctl status --app lyra-beat
+flyctl status --app beats-scorer
 
 # View logs
-flyctl logs --app lyra-beat
+flyctl logs --app beats-scorer
 
 # Open in browser
-flyctl open --app lyra-beat
-```
+flyctl open --app beats-scorer
 
-**Production URL:** `https://lyra-beat.fly.dev`
+**Production URL:** `https://beats-scorer.fly.dev`
 
 ---
 
@@ -293,7 +292,7 @@ All API keys and tokens are managed via Doppler. **Never commit secrets to git.*
 doppler login
 
 # 2. Set up project
-doppler setup --project lyra-beat --config dev
+doppler setup --project beats-scorer --config dev
 
 # 3. Add secrets (one by one or via script)
 doppler secrets set GEMINI_API_KEY "your_key"
@@ -372,7 +371,7 @@ export FLY_API_TOKEN="..."
 | 1 | **Missing `.env` file** | Backend crashes on startup without API keys | `cp .env.example .env` and fill in keys |
 | 2 | **`.env.keys` not tracked** | No reference for which keys are needed | Document in README or create a secure vault reference |
 | 3 | **No root startup script** | Must run backend + frontend in separate terminals manually | Create `Makefile` or `start.sh` |
-| 4 | **Fly.io app name mismatch** | `fly.toml` uses `lyra-beat` but repo is `beats-scorer` | Rename app in `fly.toml` or create new Fly app |
+| 4 | ~~Fly.io app name mismatch~~ | ✅ Fixed: `fly.toml` now uses `beats-scorer` | N/A |
 | 5 | **Backend port inconsistency** | Config defaults to 8000, but Dockerfile/fly.toml use 8080 | Standardize on 8080 everywhere |
 
 ### 🟡 High (Should Fix for Smooth Operation)

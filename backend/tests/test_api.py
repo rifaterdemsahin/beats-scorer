@@ -1,4 +1,4 @@
-"""Basic API tests for Lyra-Beat backend."""
+"""Basic API tests for beats-scorer backend."""
 import pytest
 from fastapi.testclient import TestClient
 from app.main import app

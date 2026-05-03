@@ -18,4 +18,4 @@ gh secret set DOPPLER_TOKEN --body "$DOPPLER_TOKEN"
 
 # Note: Get your Doppler Service Token from:
 # https://dashboard.doppler.com/workplace/5ccb59c6d72db414f3e7/getting-started
-# Project: lyra-beat, Config: dev
+# Project: beats-scorer, Config: dev
