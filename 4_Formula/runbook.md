@@ -324,12 +324,30 @@ export FLY_API_TOKEN="..."
 
 ### 7.4 GitHub Actions + Doppler
 
-1. Get a **Service Token** from Doppler dashboard
-2. Add to GitHub secrets:
-   ```bash
-   export DOPPLER_TOKEN="dp.st.xxx"
-   ./scripts/setup-github-secrets.sh
-   ```
+> **Status:** ✅ Completed on 2026-05-03  
+> **Detailed log:** [`github-actions-secrets-log.md`](./github-actions-secrets-log.md)
+
+**Secrets configured:**
+- `FLY_API_TOKEN` — Fly.io deploy token
+- `DOPPLER_TOKEN` — Doppler Service Token for CI/CD secret injection
+
+**Verification:**
+```bash
+gh secret list --repo rifaterdemsahin/beats-scorer
+# Output:
+# DOPPLER_TOKEN	2026-05-03T17:19:07Z
+# FLY_API_TOKEN	2026-05-03T17:19:00Z
+```
+
+**Auto-deploy is now active.** Pushing to `main` triggers:
+1. `pytest` test suite
+2. `flyctl deploy --remote-only` (via Doppler with all secrets)
+
+**If you need to re-run setup manually:**
+```bash
+export DOPPLER_TOKEN="[DOPPLER_SERVICE_TOKEN_PLACEHOLDER]"
+./scripts/setup-github-secrets.sh
+```
 
 ---
 
@@ -489,8 +507,12 @@ pytest tests/test_api.py::TestHealthEndpoint::test_health_returns_200 -v
 - [ ] `/review` refines metadata correctly
 - [ ] Audio player loads and plays (if fal.ai key provided)
 - [ ] Docker Compose starts all services
+- [x] Doppler project created and secrets uploaded
+- [x] GitHub Actions secrets configured (`FLY_API_TOKEN`, `DOPPLER_TOKEN`)
+- [ ] Push to `main` triggers GitHub Actions workflow
+- [ ] Tests pass in CI
 - [ ] Fly.io deployment succeeds
-- [ ] Doppler secrets inject correctly
+- [ ] Doppler secrets inject correctly at runtime
 
 ---
 
@@ -504,6 +526,7 @@ pytest tests/test_api.py::TestHealthEndpoint::test_health_returns_200 -v
 | `backend/requirements.txt` | `backend/` | Python dependencies |
 | `frontend/package.json` | `frontend/` | Node.js dependencies |
 | `scripts/setup-doppler.sh` | `scripts/` | Automated Doppler setup |
+| `github-actions-secrets-log.md` | `4_Formula/` | Step-by-step CI/CD secrets setup log |
 | `README.md` | Root | High-level project overview |
 
 ---
