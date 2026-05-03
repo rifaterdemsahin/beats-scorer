@@ -25,6 +25,7 @@ wheels/
 
 # Environment & Secrets
 .env
+.env.*
 .env.local
 .env.*.local
 .env.backup
