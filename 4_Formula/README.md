@@ -16,13 +16,15 @@ This folder is the **knowledge base** of the project — the step-by-step reason
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| `implementation_guide.md` | Main step-by-step build guide |
-| `research_notes.md` | Technology evaluations and findings |
-| `decisions.md` | Architecture Decision Records (ADRs) |
-| `docker_setup.md` | Qdrant + Ollama containerised setup |
-| `api_reference.md` | Key API endpoints and usage |
+| File | Bounded Context | Description |
+|------|----------------|-------------|
+| [`runbook.md`](./runbook.md) | **Operations** | Complete guide to clone, configure, and run the project |
+| [`project-scaffolding.md`](./project-scaffolding.md) | **Infrastructure** | How the 7-stage template was applied and directories created |
+| [`backend-implementation.md`](./backend-implementation.md) | **Backend** | FastAPI architecture, Gemini/fal.ai integration, API design |
+| [`frontend-implementation.md`](./frontend-implementation.md) | **Frontend** | Next.js components, design system, backend integration |
+| [`devops-infrastructure.md`](./devops-infrastructure.md) | **DevOps** | Docker, Fly.io, GitHub Actions, Doppler configuration |
+| [`github-actions-secrets-log.md`](./github-actions-secrets-log.md) | **Security** | Step-by-step execution log of CI/CD secrets setup |
+| `ai_4d_approach.md` | **Research** | AI Fluency 4Ds framework reference |
 
 ## Containerised AI Stack
 
@@ -53,9 +55,44 @@ services:
 
 ## 🧪 Testing Checklist
 
-<!-- Embed a relevant YouTube video explaining architecture decision records / Docker Compose -->
+- [x] Implementation guide covers all major features (backend, frontend, DevOps)
+- [x] All bounded contexts have dedicated formula documents
+- [x] Docker Compose config starts API and Qdrant cleanly
+- [x] Secrets management documented with step-by-step logs
+- [ ] Research notes reference their sources (partial — ai_4d_approach.md present)
+- [ ] Architecture Decision Records (ADRs) formalized in `decisions.md`
 
-- [ ] Implementation guide covers all major features
-- [ ] All major decisions have an ADR entry
-- [ ] Docker Compose config starts both Qdrant and Ollama cleanly
-- [ ] Research notes reference their sources
+## 🗺️ Bounded Contexts Map
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    beats-scorer Project                      │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
+│  │  Scaffolding │  │   Backend    │  │   Frontend   │      │
+│  │  (1_Folder   │  │  (FastAPI)   │  │  (Next.js)   │      │
+│  │   setup)     │  │              │  │              │      │
+│  │              │  │  - Gemini    │  │  - Audio     │      │
+│  │  project-    │  │  - fal.ai    │  │    Player    │      │
+│  │  scaffolding │  │  - Prometheus│  │  - Mood Viz  │      │
+│  │  .md         │  │              │  │  - Feedback  │      │
+│  └──────────────┘  └──────────────┘  └──────────────┘      │
+│                                                              │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │                  DevOps & Security                   │   │
+│  │                                                      │   │
+│  │  - Dockerfile    - fly.toml    - GitHub Actions      │   │
+│  │  - docker-compose.yml    - Doppler    - Secrets      │   │
+│  │                                                      │   │
+│  │  devops-infra.md    github-actions-secrets-log.md    │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                              │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │                   Operations Guide                   │   │
+│  │                                                      │   │
+│  │  runbook.md — Complete setup, deployment, gaps       │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+```
