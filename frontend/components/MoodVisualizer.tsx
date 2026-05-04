@@ -1,7 +1,7 @@
 import React from 'react';
 import { Heart, Zap, Music, Clock, Drum } from 'lucide-react';
 
-interface MoodData {
+export interface MoodData {
   valence: number;      // 0.0 - 1.0 (sad to happy)
   arousal: number;      // 0.0 - 1.0 (calm to energetic)
   key: string;

@@ -34,12 +34,11 @@ export default function Home() {
 
       // Call backend API
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/review`,
+        `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/generate-score`,
         {
-          feedback: feedback.comment || feedback.rating,
-          current_metadata: result?.mood,
+          text: sentence,
         },
-        { timeout: 10000 }
+        { timeout: 15000 }
       );
 
       clearTimeout(statusTimeout1);
